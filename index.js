@@ -92,9 +92,6 @@ exports.update = function (options, callback) {
   callback = callback || noop();
 
   (function (done) {
-    if (commitMessage) {
-      return git.isRepositoryClean(done);
-    }
     return done(null);
   })(function(err) {
     if (err) {
